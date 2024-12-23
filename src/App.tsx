@@ -1,11 +1,12 @@
-import './App.css'
+import "./App.css";
+import { ColorPicker } from "./components/ColorPicker";
 
 function App() {
   return (
     <>
-      hello world
+      <ColorPicker />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
