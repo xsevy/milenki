@@ -1,3 +1,3 @@
-export const ModePicker = () => {
+export const ModePicker: React.FC = () => {
   return <>Mode picker</>;
 };
