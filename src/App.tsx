@@ -1,13 +1,17 @@
 import { useState } from "react";
 import "./App.css";
 import { ModePicker } from "./components/ModePicker";
+import { Row } from "react-bootstrap";
+import { GameMode } from "./components/ModePicker/modes";
 
 function App() {
-  const [mode, setMode] = useState({});
+  const [selectedMode, setSelectedMode] = useState(GameMode.Sound);
 
   return (
     <>
-      <ModePicker />
+      <Row>
+        <ModePicker />
+      </Row>
     </>
   );
 }
