@@ -1,10 +1,13 @@
+import { useState } from "react";
 import "./App.css";
-import { ColorPicker } from "./components/ColorPicker";
+import { ModePicker } from "./components/ModePicker";
 
 function App() {
+  const [mode, setMode] = useState({});
+
   return (
     <>
-      <ColorPicker />
+      <ModePicker />
     </>
   );
 }
