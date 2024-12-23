@@ -9,8 +9,11 @@ function App() {
 
   return (
     <>
-      <Row>
-        <ModePicker />
+      <Row className="justify-content-center">
+        <ModePicker
+          selectedMode={selectedMode}
+          setSelectedMode={setSelectedMode}
+        />
       </Row>
     </>
   );
