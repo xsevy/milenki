@@ -1,6 +1,7 @@
 import { Col } from "react-bootstrap";
 import { Mode } from "./Mode";
 import { GameMode } from "./modes";
+import { IconMusicNote, IconPaletteFill } from "../../icons";
 
 interface ModePickerProps {
   selectedMode: GameMode;
@@ -12,8 +13,8 @@ export const ModePicker: React.FC<ModePickerProps> = ({
   setSelectedMode,
 }) => {
   const modes = {
-    [GameMode.Sound]: "🎵",
-    [GameMode.Color]: "🎨",
+    [GameMode.Sound]: <IconMusicNote />,
+    [GameMode.Color]: <IconPaletteFill />,
   };
   const modesArray = Object.values(modes);
   const xsColumnSize = modesArray.length;
@@ -26,6 +27,7 @@ export const ModePicker: React.FC<ModePickerProps> = ({
             isSelected={mode === modes[selectedMode]}
             key={index}
             icon={mode}
+            onClick={() => setSelectedMode(Object.keys(modes)[index])}
           />
         </Col>
       ))}
