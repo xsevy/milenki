@@ -35,7 +35,7 @@ function App() {
           padding: 0,
         }}
       >
-        <Characters selectedColor={selectedColor} />
+        <Characters selectedMode={selectedMode} selectedColor={selectedColor} />
       </Row>
     </div>
   );

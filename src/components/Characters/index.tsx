@@ -1,35 +1,55 @@
 import { useState } from "react";
 import { Character } from "./Character";
+import fart from "../../assets/fart.wav";
+import burp from "../../assets/burp.wav";
+import useSound from "use-sound";
 
 interface CharactersProps {
   selectedColor: string;
+  selectedMode: string;
 }
 
-export const Characters: React.FC<CharactersProps> = ({ selectedColor }) => {
+export const Characters: React.FC<CharactersProps> = ({
+  selectedColor,
+  selectedMode,
+}) => {
+  const [playFart] = useSound(fart);
+  const [playBurp] = useSound(burp);
+
   const [characters, setCharacters] = useState([
     {
       color: "gray",
+      play: playFart,
     },
     {
       color: "gray",
+      play: playBurp,
     },
     {
       color: "gray",
+      play: "",
     },
     {
       color: "gray",
+      play: "",
     },
     {
       color: "gray",
+      play: "",
     },
     {
       color: "gray",
+      play: "",
     },
   ]);
 
   const handleCharacterClick = (index: number) => {
     const newCharacters = [...characters];
-    newCharacters[index].color = selectedColor;
+    if (selectedMode === "color") {
+      newCharacters[index].color = selectedColor;
+    } else {
+      newCharacters[index].play();
+    }
     setCharacters(newCharacters);
   };
 
