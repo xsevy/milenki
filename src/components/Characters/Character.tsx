@@ -1,8 +1,9 @@
 interface CharacterProps {
   color: string;
+  onClick?: () => void;
 }
 
-export const Character: React.FC<CharacterProps> = ({ color }) => {
+export const Character: React.FC<CharacterProps> = ({ color, onClick }) => {
   return (
     <div
       style={{
@@ -14,6 +15,7 @@ export const Character: React.FC<CharacterProps> = ({ color }) => {
         borderTopLeftRadius: "12px",
         borderTopRightRadius: "12px",
       }}
+      onClick={onClick}
     ></div>
   );
 };

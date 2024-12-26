@@ -23,10 +23,17 @@ export const Characters = () => {
     },
   ]);
 
+  const handleCharacterClick = (index: number) => {
+  };
+
   return (
     <div className="justify-content-center d-flex">
       {characters.map((character, index) => (
-        <Character key={index} color={character.color} />
+        <Character
+          onClick={handleCharacterClick}
+          key={index}
+          color={character.color}
+        />
       ))}
     </div>
   );
