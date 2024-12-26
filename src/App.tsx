@@ -8,6 +8,7 @@ import { ColorPicker } from "./components/ColorPicker";
 
 function App() {
   const [selectedMode, setSelectedMode] = useState(GameMode.Sound);
+  const [selectedColor, setSelectedColor] = useState("");
 
   return (
     <div>
@@ -23,7 +24,9 @@ function App() {
         }}
         className="d-flex align-items-center justify-content-center"
       >
-        {selectedMode === GameMode.Color && <ColorPicker />}
+        {selectedMode === GameMode.Color && (
+          <ColorPicker setSelectedColor={setSelectedColor} />
+        )}
       </Row>
       <Row
         className="justify-content-center"
@@ -32,7 +35,7 @@ function App() {
           padding: 0,
         }}
       >
-        <Characters />
+        <Characters selectedColor={selectedColor} />
       </Row>
     </div>
   );
