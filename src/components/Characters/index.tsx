@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Character } from "./Character";
 import fart from "../../assets/fart.wav";
 import burp from "../../assets/burp.wav";
+import rooster from "../../assets/rooster.wav";
+import horse from "../../assets/horse.wav";
+import evilLaugh from "../../assets/evil-laugh.wav";
+import pig from "../../assets/pig.wav";
 import useSound from "use-sound";
 
 interface CharactersProps {
@@ -15,6 +19,10 @@ export const Characters: React.FC<CharactersProps> = ({
 }) => {
   const [playFart] = useSound(fart);
   const [playBurp] = useSound(burp);
+  const [playRooster] = useSound(rooster);
+  const [playHorse] = useSound(horse);
+  const [playEvilLaugh] = useSound(evilLaugh);
+  const [playPig] = useSound(pig);
 
   const [characters, setCharacters] = useState([
     {
@@ -27,19 +35,19 @@ export const Characters: React.FC<CharactersProps> = ({
     },
     {
       color: "gray",
-      play: "",
+      play: playRooster,
     },
     {
       color: "gray",
-      play: "",
+      play: playHorse,
     },
     {
       color: "gray",
-      play: "",
+      play: playEvilLaugh,
     },
     {
       color: "gray",
-      play: "",
+      play: playPig,
     },
   ]);
 
