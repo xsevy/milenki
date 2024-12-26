@@ -22,7 +22,7 @@ export const ModePicker: React.FC<ModePickerProps> = ({
   return (
     <>
       {modesArray.map((mode, index) => (
-        <Col xs={xsColumnSize}>
+        <Col className="d-flex justify-content-center" xs={xsColumnSize}>
           <Mode
             isSelected={mode === modes[selectedMode]}
             key={index}
