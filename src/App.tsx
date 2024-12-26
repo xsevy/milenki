@@ -4,6 +4,7 @@ import { ModePicker } from "./components/ModePicker";
 import { Row } from "react-bootstrap";
 import { GameMode } from "./components/ModePicker/modes";
 import { Characters } from "./components/Characters";
+import { ColorPicker } from "./components/ColorPicker";
 
 function App() {
   const [selectedMode, setSelectedMode] = useState(GameMode.Sound);
@@ -15,6 +16,14 @@ function App() {
           selectedMode={selectedMode}
           setSelectedMode={setSelectedMode}
         />
+      </Row>
+      <Row
+        style={{
+          height: "100px",
+        }}
+        className="d-flex align-items-center justify-content-center"
+      >
+        {selectedMode === GameMode.Color && <ColorPicker />}
       </Row>
       <Row
         className="justify-content-center"
