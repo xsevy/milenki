@@ -1,11 +1,13 @@
 interface ColorPickerProps {
+  selectedColor: string;
   setSelectedColor: (color: string) => void;
 }
 
 export const ColorPicker: React.FC<ColorPickerProps> = ({
+  selectedColor,
   setSelectedColor,
 }) => {
-  const colors = ["red", "green", "yellow", "blue", "purple", "pink", "black"];
+  const colors = ["red", "green", "yellow", "blue", "purple", "pink"];
   return (
     <>
       {colors.map((color) => (
@@ -18,6 +20,10 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
             marginRight: "4px",
             marginLeft: "4px",
             borderRadius: "24px",
+            border:
+              selectedColor === color
+                ? "3px solid black"
+                : "3px solid transparent",
           }}
         ></div>
       ))}

@@ -25,7 +25,7 @@ function App() {
         className="d-flex align-items-center justify-content-center"
       >
         {selectedMode === GameMode.Color && (
-          <ColorPicker setSelectedColor={setSelectedColor} />
+          <ColorPicker selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
         )}
       </Row>
       <Row
