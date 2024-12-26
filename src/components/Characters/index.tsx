@@ -1,25 +1,25 @@
 import { useState } from "react";
-import { Character } from "../Character";
+import { Character } from "./Character";
 
 export const Characters = () => {
   const [characters, setCharacters] = useState([
     {
-      color: "red",
+      color: "gray",
     },
     {
-      color: "green",
+      color: "gray",
     },
     {
-      color: "yellow",
+      color: "gray",
     },
     {
-      color: "blue",
+      color: "gray",
     },
     {
-      color: "black",
+      color: "gray",
     },
     {
-      color: "purple",
+      color: "gray",
     },
   ]);
 
