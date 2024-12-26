@@ -12,7 +12,9 @@ export const Mode: React.FC<ButtonProps & ModeProps> = ({
 }) => {
   return (
     <div
-      className={`rounded-circle p-2 ${isSelected ? "text-primary" : ""}`}
+      className={`rounded-circle justify-content-center p-2 ${
+        isSelected ? "text-primary" : ""
+      }`}
       onClick={onClick}
     >
       {icon}
